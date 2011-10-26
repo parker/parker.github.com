@@ -21,12 +21,12 @@
 				data-companyID="26255"></script>
 		
 		<script type="text/javascript">
-			var applyId = document.getElementsById("li-url-apply");
+			var applyId = document.getElementById("li-url-apply");
 			var now = new Date();
 			var meta = {
-				ts = now.getTime(), ts_name = now.toLocaleDateString() + " " + now.toLocaleTimeString()
+				ts : now.getTime(), ts_name : now.toLocaleDateString() + " " + now.toLocaleTimeString()
 			};
-			applyId.setAttribute("data-meta", JSON.strin)
+			applyId.setAttribute("data-meta", JSON.stringify(meta))
 		
 		</script>
 		
