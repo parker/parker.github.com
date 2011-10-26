@@ -3,11 +3,6 @@
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title>li-apply</title>
-		
-		<script type="text/javascript" src="http://platform.linkedin.com/in.js">
-		  api_key: bv8d7z2lxq75
-		</script>
-		
 	</head>
 	<body id="li-apply" onload="">
 		<script type="IN/Share"></script>
@@ -16,8 +11,28 @@
 		<br/><br/>
 		<script type="IN/Apply" 
 				data-email="parker@indeed.com" 
-				data-jobTitle="Labs Engineer" 
+				data-jobTitle="Labs Engineer - email application" 
 				data-companyID="26255"></script>
+		<br/><br/>
+		<script id="li-url-apply" type="IN/Apply" 
+				data-url="http://thirdpartyapply.herokuapp.com/li_post"
+				data-urlFormat="json"
+				data-jobTitle="Labs Engineer - data application" 
+				data-companyID="26255"></script>
+		
+		<script type="text/javascript">
+			var applyId = document.getElementsById("li-url-apply");
+			var now = new Date();
+			var meta = {
+				ts = now.getTime(), ts_name = now.toLocaleDateString() + " " + now.toLocaleTimeString()
+			};
+			applyId.setAttribute("data-meta", JSON.strin)
+		
+		</script>
+		
+		<script type="text/javascript" src="http://platform.linkedin.com/in.js">
+		  api_key: bv8d7z2lxq75
+		</script>
 		
 	</body>
 </html>
