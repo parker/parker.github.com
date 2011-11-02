@@ -8,6 +8,7 @@
 <body id="index">
 	<h1 id="">Experimenting with Rich Snippets</h1>
 	<table border="0" cellspacing="5" cellpadding="5">
+		<thead>
 		<tr>
 			<th>Resume</th>
 			<th>Rich Snippet</th>			
@@ -15,6 +16,8 @@
 		<tr>
 			<td>Data</td>
 		</tr>
+		</thead>
+		<tbody id="snippets-tbody">
 		<tr>
 			<td><a href="http://www.indeed.com/me/parkerseidel">Indeed Rez - production</a></td>
 			<td><a href="http://www.google.com/webmasters/tools/richsnippets?url=http%3A%2F%2Fwww.indeed.com%2Fme%2Fparkerseidel" > View Snippet</a></td>
@@ -43,6 +46,7 @@
 			<td><a href="http://parker.github.com/schema-org/Person_barebones.html">Person (schema.org) - barebones</a></td>
 			<td><a href="http://www.google.com/webmasters/tools/richsnippets?url=http%3A%2F%2Fparker.github.com%2Fschema-org%2FPerson_barebones.html" > View Snippet</a></td>
 		</tr>
+		</tbody>
 	</table>
 	<script>
 	var urls = ['http://www.indeed.com/me/parkerseidel', 
@@ -51,10 +55,17 @@
 				'http://parker.github.com/rez-indeed_barebones.html', 
 				'http://parker.github.com/rez-indeed_barebones_vcard.html', 
 				'http://parker.github.com/schema-org/Person.html', 
-				'http://parker.github.com/schema-org/Person_barebones.html']
-	for( u in urls) { 
-		console.log('<tr>\n\t<td><a href="' + urls[u] + '">' + urls[u] + '</a></td>\n\t<td><a href="http://www.google.com/webmasters/tools/richsnippets?url=' + encodeURIComponent(urls[u]) + '" > View Snippet</a></td>\n</tr>');
+				'http://parker.github.com/schema-org/Person_barebones.html',
+				'http://parker.github.com/cmp-indeed.html',
+				'http://parker.github.com/schema-org/Rating.html',
+				'http://parker.github.com/schema-org/AggRating.html'];
+	var tbody = document.getElementById('snippets-tbody'),
+		sb = [];
+	
+	for( u in urls) {		
+		sb.push('<tr>\n\t<td><a href="' + urls[u] + '">' + urls[u] + '</a></td>\n\t<td><a href="http://www.google.com/webmasters/tools/richsnippets?url=' + encodeURIComponent(urls[u]) + '" > View Snippet</a></td>\n</tr>');
 	}
+	tbody.innerHTML = sb.join("");
 	</script>
 </body>
 </html>
