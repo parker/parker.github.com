@@ -5,6 +5,11 @@
 		<title>li-apply</title>
 	</head>
 	<body id="li-apply" onload="">
+		<script>
+			var onResize = function(params) {
+				console.log('OnResize :', params);
+			};
+		</script>
 		<script type="IN/Share"></script>
 		<br/><br/>
 		<script type="IN/Login"></script>
@@ -17,7 +22,8 @@
 		<script id="li-url-apply" type="IN/Apply" 
 				data-url="http://thirdpartyapply.herokuapp.com/li_post"
 				data-urlFormat="json"
-				data-jobTitle="Labs Engineer - data application" 
+				data-jobTitle="Labs Engineer - data application"
+				data-onResize="onResize" 
 				data-companyID="26255"></script>
 		
 		<script type="text/javascript">
