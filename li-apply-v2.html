@@ -48,9 +48,30 @@
 			applyId.setAttribute("data-meta", JSON.stringify(meta))
 		
 		</script>
+		
+		
 				
 		<br />
-		
+		<div> Apply via post url:
+	        <span class="indeed-apply-widget"
+	            data-indeed-apply-onapplied="on_applied_callback"
+	            data-indeed-apply-apiToken="${buttonTestViewModel.apiToken}"
+	            data-indeed-apply-jobId="123457"
+	            data-indeed-apply-jobLocation="Austin TX"
+	            data-indeed-apply-jobCompanyName="My Favorite Company"
+	            data-indeed-apply-jobTitle="Professional Basket Weaver (apply by posturl)"
+	            data-indeed-apply-jobUrl="http://www.indeed.com"
+	            data-indeed-apply-jobMeta="job-meta-posturl top"
+	            data-indeed-apply-posturl="http://thirdpartyapply.herokuapp.com/li_post"
+	        ></span>
+	    </div>
+	
+		<script>
+		(function() {var JS="http://localhost:8080/indeedapply/env?",JS_HTTPS="http://localhost:8080/indeedapply/env?https=1";
+		window.Indeed||function(m,r,s){function n(){return["<",g,' onload="var d=',e,";d.getElementsByTagName('head')[0].",h,"(d.",f,"('script')).",i,"='",t?s:r,"'\"></",g,">"].join("")}var d=window,a=d.Indeed=d.Indeed||function(){(a._=a._||[]).push(arguments)},c=document,g="body",j=c[g],t=/^https:\/\//.test(c.location.href),o;if(!j)return o=arguments.callee,setTimeout(function(){o(m)},100);a.$={0:+new Date};a.T=function(b){a.$[b]=new Date-a.$[0]};a.v=4;var h="appendChild",f="createElement",i="src",k=c[f]("div"),
+		u=k[h](c[f]("m")),b=c[f]("iframe"),e="document",l,p=function(){a.T("load");a("load")};d.addEventListener?d.addEventListener("load",p,false):d.attachEvent("onload",p);k.style.display="none";j.insertBefore(k,j.firstChild).id="Indeed";b.frameBorder="0";b.id="Indeed-iframe";b.allowTransparency="true";u[h](b);try{b.contentWindow[e].open()}catch(v){m.domain=c.domain,l="javascript:var d="+e+".open();d.domain='"+c.domain+"';",b[i]=l+"void(0);"}try{var q=b.contentWindow[e];q.write(n());q.close()}catch(w){b[i]=
+		l+'d.write("'+n().replace(/"/g,'\\"')+'");d.close();'}a.T(1)}({},JS,JS_HTTPS);})();		
+		</script>
 		
 		<a href="javascript:Meebo('domReady')">Meebo("domReady")</a>
 		
