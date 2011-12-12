@@ -1,0 +1,27 @@
+<html>
+
+	<body>
+		<style>
+		body { 
+			width: 90%; margin: 0 auto; display: block;
+		}
+		</style>
+		<script src="xpcdemo.js"></script>
+		<script>
+			xpcdemo.setup_outer();
+		</script>
+		<p>How to get the error in FireFox 3.6</p>
+		<ol>
+			<li>Send a message</li>
+			<li>Reset the Domain on the outer page or the inner iframe</li>
+			<li>Send another message - will get a funky error ('Illegal operation on WrappedNative prototype object')</li>
+			<li>The error only is displayed if this page on the same full domain as the other page</li>
+		</ol>
+		
+		<div>
+			<a href="javascript:xpcdemo.send('ts ' + (new Date()).getTime() )"> send message</a>
+			<br />
+			<a href="javascript:xpcdemo.reset_domain()"> Reset Domain</a>
+		</div>
+	</body>
+</html>
