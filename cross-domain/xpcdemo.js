@@ -17,9 +17,13 @@ var xpcdemo = (function() {
        if(!log) {
            log = document.createElement('div');
            log.id = 'log';
+           log.style.cssText = 'height: 200px; overflow: auto; padding: 5px; margin: 5px; border: 1px solid grey;';
            document.body.appendChild(log);
        }
        var msg = document.createElement('p');
+       msg.style.padding = '0';
+       msg.style.margin = '0';
+       
        msg.innerHTML = s_msg;
        log.insertBefore(msg, log.children[0]);
        
@@ -28,7 +32,7 @@ var xpcdemo = (function() {
    xpc.createiframe = function(url) {
        var iframe = document.createElement('iframe');
        iframe.id = 'xpc-iframe';
-       iframe.style.cssText = 'width: 50%; height: 100%; float: right;'
+       iframe.style.cssText = 'width: 50%; height: 100%; float: right; border: none;'
        document.body.appendChild(iframe);
        iframe.src = url;
        
