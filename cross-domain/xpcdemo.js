@@ -27,11 +27,22 @@ var xpcdemo = (function() {
    
    xpc.createiframe = function(url) {
        var iframe = document.createElement('iframe');
+       iframe.id = 'xpc-iframe';
        iframe.style.cssText = 'width: 50%; height: 100%; float: right;'
        document.body.appendChild(iframe);
        iframe.src = url;
        
        xpc._channel = iframe.contentWindow;
+   };
+   
+   xpc.reset_channel = function() {
+       if(!!window.parent && !(window.top === window.self) ) {
+           // iframe
+           xpc._channel = window.parent;
+       } else {
+           var iframe = document.getElementById('xpc-iframe');
+           xpc._channel = iframe.contentWindow;           
+       }
    };
    
    xpc.setup_outer = function() {
