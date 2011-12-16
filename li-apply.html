@@ -28,13 +28,16 @@
 				data-companyID="26255"></script>
 		
 		<script type="text/javascript">
-			var applyId = document.getElementById("li-url-apply");
-			var now = new Date();
-			var meta = {
-				ts : now.getTime(), ts_name : now.toLocaleDateString() + " " + now.toLocaleTimeString()
-			};
-			applyId.setAttribute("data-meta", JSON.stringify(meta))
-		
+				if(typeof JSON != 'undefined' && document.querySelectorAll) {
+		            var applyIds = document.querySelectorAll("#li-url-apply");
+		            var now = new Date();
+		            var meta = {
+		                ts : now.getTime(), ts_name : now.toLocaleDateString() + " " + now.toLocaleTimeString()
+		            };
+		            for(var i =0; i < applyIds.length; i++ ) {
+		                applyIds[i].setAttribute("data-indeed-apply-jobMeta", JSON.stringify(meta));
+		            }
+		        }		
 		</script>
 		
 		<script type="text/javascript" src="http://platform.linkedin.com/in.js?debug=1">
